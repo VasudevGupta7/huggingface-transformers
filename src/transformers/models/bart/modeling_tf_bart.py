@@ -645,6 +645,8 @@ class TFBartEncoder(tf.keras.layers.Layer):
         self.layers = [TFBartEncoderLayer(config, name=f"layers.{i}") for i in range(config.encoder_layers)]
         self.layernorm_embedding = tf.keras.layers.LayerNormalization(epsilon=1e-5, name="layernorm_embedding")
 
+        self.step_0 = True
+
     def get_embed_tokens(self):
         return self.embed_tokens
 
@@ -758,7 +760,7 @@ class TFBartEncoder(tf.keras.layers.Layer):
                 encoder_states = encoder_states + (hidden_states,)
             # add LayerDrop (see https://arxiv.org/abs/1909.11556 for description)
             dropout_probability = random.uniform(0, 1)
-            if inputs["training"] and (dropout_probability < self.layerdrop):  # skip the layer
+            if (not self.step_0) and inputs["training"] and (dropout_probability < self.layerdrop):  # skip the layer
                 continue
 
             hidden_states, attn = encoder_layer(
@@ -770,6 +772,7 @@ class TFBartEncoder(tf.keras.layers.Layer):
             if inputs["output_attentions"]:
                 all_attentions += (attn,)
 
+        self.step_0 = False
         if inputs["output_hidden_states"]:
             encoder_states = encoder_states + (hidden_states,)
 
