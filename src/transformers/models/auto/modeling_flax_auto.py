@@ -48,6 +48,7 @@ FLAX_MODEL_MAPPING_NAMES = OrderedDict(
         ("opt", "FlaxOPTModel"),
         ("pegasus", "FlaxPegasusModel"),
         ("roberta", "FlaxRobertaModel"),
+        ("data2vec", "FlaxData2VecModel"),
         ("roformer", "FlaxRoFormerModel"),
         ("t5", "FlaxT5Model"),
         ("vision-text-dual-encoder", "FlaxVisionTextDualEncoderModel"),
@@ -70,6 +71,7 @@ FLAX_MODEL_FOR_PRETRAINING_MAPPING_NAMES = OrderedDict(
         ("mbart", "FlaxMBartForConditionalGeneration"),
         ("mt5", "FlaxMT5ForConditionalGeneration"),
         ("roberta", "FlaxRobertaForMaskedLM"),
+        ("data2vec", "FlaxData2VecForMaskedLM"),
         ("roformer", "FlaxRoFormerForMaskedLM"),
         ("t5", "FlaxT5ForConditionalGeneration"),
         ("wav2vec2", "FlaxWav2Vec2ForPreTraining"),
@@ -88,6 +90,7 @@ FLAX_MODEL_FOR_MASKED_LM_MAPPING_NAMES = OrderedDict(
         ("electra", "FlaxElectraForMaskedLM"),
         ("mbart", "FlaxMBartForConditionalGeneration"),
         ("roberta", "FlaxRobertaForMaskedLM"),
+        ("data2vec", "FlaxData2VecForMaskedLM"),
         ("roformer", "FlaxRoFormerForMaskedLM"),
         ("xlm-roberta", "FlaxXLMRobertaForMaskedLM"),
     ]
@@ -135,6 +138,7 @@ FLAX_MODEL_FOR_CAUSAL_LM_MAPPING_NAMES = OrderedDict(
         ("gptj", "FlaxGPTJForCausalLM"),
         ("opt", "FlaxOPTForCausalLM"),
         ("roberta", "FlaxRobertaForCausalLM"),
+        ("data2vec", "FlaxData2VecForCausalLM"),
         ("xglm", "FlaxXGLMForCausalLM"),
     ]
 )
@@ -150,6 +154,7 @@ FLAX_MODEL_FOR_SEQUENCE_CLASSIFICATION_MAPPING_NAMES = OrderedDict(
         ("electra", "FlaxElectraForSequenceClassification"),
         ("mbart", "FlaxMBartForSequenceClassification"),
         ("roberta", "FlaxRobertaForSequenceClassification"),
+        ("data2vec", "FlaxData2VecForSequenceClassification"),
         ("roformer", "FlaxRoFormerForSequenceClassification"),
         ("xlm-roberta", "FlaxXLMRobertaForSequenceClassification"),
     ]
@@ -166,6 +171,7 @@ FLAX_MODEL_FOR_QUESTION_ANSWERING_MAPPING_NAMES = OrderedDict(
         ("electra", "FlaxElectraForQuestionAnswering"),
         ("mbart", "FlaxMBartForQuestionAnswering"),
         ("roberta", "FlaxRobertaForQuestionAnswering"),
+        ("data2vec", "FlaxData2VecForQuestionAnswering"),
         ("roformer", "FlaxRoFormerForQuestionAnswering"),
         ("xlm-roberta", "FlaxXLMRobertaForQuestionAnswering"),
     ]
@@ -180,6 +186,7 @@ FLAX_MODEL_FOR_TOKEN_CLASSIFICATION_MAPPING_NAMES = OrderedDict(
         ("distilbert", "FlaxDistilBertForTokenClassification"),
         ("electra", "FlaxElectraForTokenClassification"),
         ("roberta", "FlaxRobertaForTokenClassification"),
+        ("data2vec", "FlaxData2VecForTokenClassification"),
         ("roformer", "FlaxRoFormerForTokenClassification"),
         ("xlm-roberta", "FlaxXLMRobertaForTokenClassification"),
     ]
@@ -194,6 +201,7 @@ FLAX_MODEL_FOR_MULTIPLE_CHOICE_MAPPING_NAMES = OrderedDict(
         ("distilbert", "FlaxDistilBertForMultipleChoice"),
         ("electra", "FlaxElectraForMultipleChoice"),
         ("roberta", "FlaxRobertaForMultipleChoice"),
+        ("data2vec", "FlaxData2VecForMultipleChoice"),
         ("roformer", "FlaxRoFormerForMultipleChoice"),
         ("xlm-roberta", "FlaxXLMRobertaForMultipleChoice"),
     ]

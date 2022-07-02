@@ -287,6 +287,7 @@ _import_structure = {
     "models.resnet": ["RESNET_PRETRAINED_CONFIG_ARCHIVE_MAP", "ResNetConfig"],
     "models.retribert": ["RETRIBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "RetriBertConfig", "RetriBertTokenizer"],
     "models.roberta": ["ROBERTA_PRETRAINED_CONFIG_ARCHIVE_MAP", "RobertaConfig", "RobertaTokenizer"],
+    "models.data2vec": ["DATA2VEC_PRETRAINED_CONFIG_ARCHIVE_MAP", "Data2VecConfig"],
     "models.roformer": ["ROFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP", "RoFormerConfig", "RoFormerTokenizer"],
     "models.segformer": ["SEGFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP", "SegformerConfig"],
     "models.sew": ["SEW_PRETRAINED_CONFIG_ARCHIVE_MAP", "SEWConfig"],
@@ -2731,6 +2732,18 @@ else:
             "FlaxRobertaPreTrainedModel",
         ]
     )
+    _import_structure["models.data2vec"].extend(
+        [
+            "FlaxData2VecForCausalLM",
+            "FlaxData2VecForMaskedLM",
+            "FlaxData2VecForMultipleChoice",
+            "FlaxData2VecForQuestionAnswering",
+            "FlaxData2VecForSequenceClassification",
+            "FlaxData2VecForTokenClassification",
+            "FlaxData2VecModel",
+            "FlaxData2VecPreTrainedModel",
+        ]
+    )
     _import_structure["models.roformer"].extend(
         [
             "FlaxRoFormerForMaskedLM",
@@ -2995,6 +3008,7 @@ if TYPE_CHECKING:
     from .models.resnet import RESNET_PRETRAINED_CONFIG_ARCHIVE_MAP, ResNetConfig
     from .models.retribert import RETRIBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, RetriBertConfig, RetriBertTokenizer
     from .models.roberta import ROBERTA_PRETRAINED_CONFIG_ARCHIVE_MAP, RobertaConfig, RobertaTokenizer
+    from .models.data2vec import DATA2VEC_PRETRAINED_CONFIG_ARCHIVE_MAP, Data2VecConfig
     from .models.roformer import ROFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP, RoFormerConfig, RoFormerTokenizer
     from .models.segformer import SEGFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP, SegformerConfig
     from .models.sew import SEW_PRETRAINED_CONFIG_ARCHIVE_MAP, SEWConfig
@@ -4988,6 +5002,16 @@ if TYPE_CHECKING:
             FlaxRobertaForTokenClassification,
             FlaxRobertaModel,
             FlaxRobertaPreTrainedModel,
+        )
+        from .models.data2vec import (
+            FlaxData2VecForCausalLM,
+            FlaxData2VecForMaskedLM,
+            FlaxData2VecForMultipleChoice,
+            FlaxData2VecForQuestionAnswering,
+            FlaxData2VecForSequenceClassification,
+            FlaxData2VecForTokenClassification,
+            FlaxData2VecModel,
+            FlaxData2VecPreTrainedModel,
         )
         from .models.roformer import (
             FlaxRoFormerForMaskedLM,

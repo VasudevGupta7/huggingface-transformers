@@ -115,6 +115,7 @@ from . import (
     resnet,
     retribert,
     roberta,
+    data2vec,
     roformer,
     segformer,
     sew,
